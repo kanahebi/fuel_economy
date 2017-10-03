@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Gasoline:</strong>
+  <%= @refuel.gasoline %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @refuel.distance %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @refuel.price %>
+</p>
+
+<p>
+  <strong>Refuel date:</strong>
+  <%= @refuel.refuel_date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @refuel.user %>
+</p>
+
+<%= link_to 'Edit', edit_refuel_path(@refuel) %> |
+<%= link_to 'Back', refuels_path %>

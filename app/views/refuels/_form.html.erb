@@ -1,0 +1,42 @@
+<%= form_with(model: refuel, local: true) do |form| %>
+  <% if refuel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(refuel.errors.count, "error") %> prohibited this refuel from being saved:</h2>
+
+      <ul>
+      <% refuel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :gasoline %>
+    <%= form.text_field :gasoline, id: :refuel_gasoline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :distance %>
+    <%= form.text_field :distance, id: :refuel_distance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :refuel_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refuel_date %>
+    <%= form.datetime_select :refuel_date, id: :refuel_refuel_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.text_field :user, id: :refuel_user %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

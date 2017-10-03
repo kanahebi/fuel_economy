@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Refuels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gasoline</th>
+      <th>Distance</th>
+      <th>Price</th>
+      <th>Refuel date</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @refuels.each do |refuel| %>
+      <tr>
+        <td><%= refuel.gasoline %></td>
+        <td><%= refuel.distance %></td>
+        <td><%= refuel.price %></td>
+        <td><%= refuel.refuel_date %></td>
+        <td><%= refuel.user %></td>
+        <td><%= link_to 'Show', refuel %></td>
+        <td><%= link_to 'Edit', edit_refuel_path(refuel) %></td>
+        <td><%= link_to 'Destroy', refuel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Refuel', new_refuel_path %>
